@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import './App.css';
 import contactsJSON from "./contacts.json";
+import { useState } from 'react';
 
 
 function App() {
-  const [contacts, setContacts] = useState(contactsJSON.slice(0, 5));
+  const [contacts, setContacts] = useState(contactsJSON.slice(5, 10));
 
   const sortName = () => {
     const sortedName = [...contacts].sort(function (a, b) {
@@ -23,6 +23,8 @@ function App() {
       <th>Picture</th>
       <th>Name</th>
       <th>Popularity</th>
+      <th>Won an Oscar</th>
+      <th>Won an Emmy</th>
       
       {contacts.map((celebrity) => {
         return (
@@ -32,6 +34,8 @@ function App() {
             </td>
             <td>{celebrity.name}</td>
             <td>{celebrity.popularity.toFixed(2)}</td>
+            <td>{celebrity.wonOscar && <p>🏆</p>}</td>
+            <td>{celebrity.wonEmmy && <p>🌟</p>}</td>
           </tr>
         )
       })}
