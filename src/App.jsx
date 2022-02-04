@@ -16,8 +16,19 @@ function App() {
     setContacts(sortedName);
   }
 
+  const randomContacts = () => {
+    const randomIndex = (Math.floor(Math.random() * (contactsJSON.length - 1)));
+    console.log('randomIndex', randomIndex);
+    const randomCelebrity = contactsJSON[randomIndex];
+    setContacts(contacts.concat(randomCelebrity))
+  }
+
   return <div className="App">
     <h2 className='header'>IronContacts</h2>
+
+    <button onClick={randomContacts}>
+      Add Random Contact
+    </button>
   
     <table className='contacts-table'>
       <th>Picture</th>
