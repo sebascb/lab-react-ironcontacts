@@ -52,35 +52,37 @@ function App() {
     <button onClick={sortPopularity}>
       Sort by popularity
     </button>
-  
-    <table>
-      <tbody>
-        <th>Picture</th>
-        <th>Name</th>
-        <th>Popularity</th>
-        <th>Won an Oscar</th>
-        <th>Won an Emmy</th>
 
-        {contacts.map((celebrity) => {
-          return (
+    <div className='Table'>
+      <table>
+        <thead>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Popularity</th>
+          <th>Won an Oscar</th>
+          <th>Won an Emmy</th>
+        </thead>
+        <tbody>
+          {contacts.map((celebrity) => {
+            return (
 
-            <tr>
-              <td>
-                <img src={celebrity.pictureUrl} alt='profile_picture' width='70px' />
-              </td>
-              <td>{celebrity.name}</td>
-              <td>{celebrity.popularity.toFixed(2)}</td>
-              <td>{celebrity.wonOscar && <p>🏆</p>}</td>
-              <td>{celebrity.wonEmmy && <p>🌟</p>}</td>
+              <tr>
+                <td>
+                  <img src={celebrity.pictureUrl} alt='profile_picture' width='70px' />
+                </td>
+                <td>{celebrity.name}</td>
+                <td>{celebrity.popularity.toFixed(2)}</td>
+                <td>{celebrity.wonOscar && <p>🏆</p>}</td>
+                <td>{celebrity.wonEmmy && <p>🌟</p>}</td>  
+                
+                <td><button onClick={() => deleteContact(celebrity.id)}>Delete</button></td>  
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
 
-              <button onClick={() => deleteContact(celebrity.id)}>
-                Delete
-              </button>  
-            </tr>      
-        )
-      })}
-      </tbody>
-    </table>
   </div>
 }
 

@@ -40,7 +40,8 @@
 button {
   background-color: rgb(193, 214, 247);
   border: 1px solid black;
-  color: black;
+  color: blue;
+  border-color: blue;
   text-align: center;
   text-decoration: none;
   margin-top: 1rem;
@@ -49,4 +50,29 @@ button {
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+.Table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: blue;
+  letter-spacing: 0.7rem;
+}
+
+thead {
+  color: grey;
+  letter-spacing: 0.3rem;
+}
+
+th {
+  padding: 20px;
+}
+
+td {
+  color: grey;
+}
+
 
